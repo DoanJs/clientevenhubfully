@@ -1,0 +1,60 @@
+query getUserId($userId: Float!) {
+  getUserId(userId: $userId) {
+    UserID
+    Username
+    Email
+    PhotoUrl
+    about
+    author_events {
+      EventID
+      imageUrl
+      locationAddress
+      title
+      startAt
+      endAt
+    }
+    followings {
+      UserID
+      PhotoUrl
+      Username
+      Email
+    }
+    followers {
+      UserID
+      PhotoUrl
+      Username
+      Email
+    }
+    interests {
+      CategoryID
+      title
+      label
+      color
+    }
+    bills {
+      BillID
+      createAt
+      updateAt
+      price
+      status
+      eventBuy {
+        EventID
+        imageUrl
+        title
+        startAt
+        endAt
+      }
+    }
+    reReviewers {
+      ReviewID
+      star
+      text
+      createAt
+      reviewer {
+        UserID
+        Username
+        PhotoUrl
+      }
+    }
+  }
+}
